@@ -41,7 +41,8 @@
 1. **Install Dependencies**  
    Make sure you have installed all required dependencies listed in `requirements.txt`:
    ```bash
-   pip install -r requirements.txt
+   apt install portaudio19-dev python3-pyaudio espeak-ng libespeak1
+   python3 -m pip install -r requirements.txt
    ```
 
 2. **Set Up the Local Model**  

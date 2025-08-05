@@ -9,11 +9,11 @@ from langchain_ollama import ChatOllama, OllamaLLM
 from langchain_core.messages import HumanMessage
 from langchain.agents import AgentExecutor, create_tool_calling_agent
 from langchain_core.prompts import ChatPromptTemplate
-from tools.time import get_time 
+from tools.time import get_time
 
 load_dotenv()
 
-MIC_INDEX = 0
+MIC_INDEX = 9
 TRIGGER_WORD = "jarvis"
 CONVERSATION_TIMEOUT = 30  # seconds of inactivity before exiting conversation mode
 
@@ -23,6 +23,9 @@ logging.basicConfig(level=logging.DEBUG) # logging
 # org_id = os.getenv("OPENAI_ORG_ID") removed because it's not needed for ollama
 
 recognizer = sr.Recognizer()
+import pyaudio
+pa = pyaudio.PyAudio()
+print(pa.get_device_count())
 mic = sr.Microphone(device_index=MIC_INDEX)
 
 # Initialize LLM
